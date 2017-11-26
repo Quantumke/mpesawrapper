@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to the new unofficial  daraja MPESA API documentation!
-======================================================
+========================================================================
 
 
 Here is a simple guide to help you get started with the   daraja API.
@@ -47,15 +47,14 @@ Getting Started
 ----------------
 
 
-**installation**::
+**Installation**
 ----------------
+::
 
     $ pip install mpesawrapper
     
 
-Making transactions is simple from your command line try the following
-
-* Import library
+**Import library**
 
 ``import mpesawrapper``
 
