@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to unofficial new daraja MPESA documentation!
+Welcome to the new unofficial  daraja MPESA API documentation!
 ======================================================
 
 
-Here is a simple guide to help you get started with the new MPESA daraja API.
+Here is a simple guide to help you get started with the   daraja API.
 
 
 .. note::
