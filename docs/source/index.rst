@@ -20,9 +20,6 @@ Here is a simple guide to help you get started with the   daraja API.
 
  - source /path/to/envname/bin/activate
 
-**installation**::
-
-    $ pip install mpesawrapper
 
 
 **NOTE**
@@ -48,6 +45,13 @@ The following MPESA features are covered in this package
 
 Getting Started
 ----------------
+
+
+**installation**::
+----------------
+
+    $ pip install mpesawrapper
+    
 
 Making transactions is simple from your command line try the following
 
