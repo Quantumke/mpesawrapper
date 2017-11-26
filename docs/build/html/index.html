@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to unofficial new daraja MPESA documentation! &mdash; mpesawrapper 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="mpesawrapper 1.0.0 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> mpesawrapper
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to unofficial new daraja MPESA documentation!</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#c2b"><strong>C2B</strong></a></li>
+<li><a class="reference internal" href="#lipa-na-m-pesa-online-payment-api"><strong>Lipa Na M-Pesa Online Payment API</strong></a></li>
+<li><a class="reference internal" href="#b2b"><strong>B2B</strong></a></li>
+<li><a class="reference internal" href="#transaction-status-request"><strong>Transaction Status Request</strong></a></li>
+<li><a class="reference internal" href="#account-balance"><strong>Account Balance</strong></a></li>
+<li><a class="reference internal" href="#b2c"><strong>B2C</strong></a></li>
+<li><a class="reference internal" href="#reversal"><strong>Reversal</strong></a></li>
+<li><a class="reference internal" href="#test-credentials"><strong>Test Credentials</strong></a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">mpesawrapper</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to unofficial new daraja MPESA documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-unofficial-new-daraja-mpesa-documentation">
+<h1>Welcome to unofficial new daraja MPESA documentation!<a class="headerlink" href="#welcome-to-unofficial-new-daraja-mpesa-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Here is a simple guide to help you get started with the new MPESA daraja API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="simple">
+<li>recommended python version is python3</li>
+</ul>
+<p><strong>Install python3 enviroment</strong></p>
+<ul class="last simple">
+<li>virtualenv -p python3 envname</li>
+<li>source /path/to/envname/bin/activate</li>
+</ul>
+</div>
+<p><strong>installation</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install mpesawrapper
+</pre></div>
+</div>
+<p><strong>NOTE</strong></p>
+<p>This api is still on beta version consult with safaricom LTD before moving to production</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The following MPESA features are covered in this package</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>OAUTH - Gives you time bound access token to call allowed APIs</li>
+<li>C2B -Register URL for Validation/Confirmation as an active listener for MPESA transactions on a shortcode.</li>
+<li>Lipa Na M-Pesa Online -  online payment using STK Push.</li>
+<li>B2B -  Mpesa Transaction from one company to another</li>
+<li>Transaction Status -Use this API to check the status of transaction</li>
+<li>Account Balance -Use this API for balance inquiry</li>
+<li>B2C -Mpesa Transaction from company to client</li>
+<li>REVERSAL  -API to reverse MPESA transactioon</li>
+</ul>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Making transactions is simple from your command line try the following</p>
+<ul class="simple">
+<li>Import library</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">import</span> <span class="pre">mpesawrapper</span></code></p>
+<ul>
+<li><p class="first"><strong>OAUTH</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">API</span>  <span class="n">should</span> <span class="n">ideally</span> <span class="n">be</span> <span class="n">called</span> <span class="n">before</span> <span class="n">every</span> <span class="n">transaction</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">an</span> <span class="n">access</span> <span class="n">token</span> <span class="k">for</span> <span class="n">other</span> <span class="n">transactions</span>
+   <span class="n">consumer_key</span><span class="o">=</span><span class="n">consumer</span> <span class="n">key</span> <span class="kn">from</span> <span class="nn">mpesa</span>
+   <span class="n">consumer_secret</span><span class="o">=</span><span class="n">consumer</span> <span class="n">secret</span> <span class="kn">from</span> <span class="nn">mpesa</span>
+   <span class="n">token</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">Generatetoken</span><span class="p">()</span><span class="o">.</span><span class="n">generate_token</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">consumer_key</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="n">consumer_secret</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This token will later be passed in other functions</p>
+</div>
+<div class="section" id="c2b">
+<h2><strong>C2B</strong><a class="headerlink" href="#c2b" title="Permalink to this headline">¶</a></h2>
+<p>This module is split in two parts</p>
+<ul class="simple">
+<li>Register URL</li>
+<li>Transaction Listener</li>
+</ul>
+<ol class="arabic">
+<li><p class="first"><strong>Register URL</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span> <span class="o">=</span> <span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">reg_url</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">C2B</span><span class="p">()</span><span class="o">.</span><span class="n">register_url</span><span class="p">(</span><span class="n">ValidationURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">ConfirmationURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">ResponseType</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">ShortCode</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">token</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">token</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>ValidationURL for the client URL <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ConfirmationURL  for the client URL <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ResponseType Default response type for timeout. Incase a transaction times out, Completed</li>
+<li>ShortCode The short code of the organization.      Numeric  123456</li>
+</ol>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first"><strong>Transaction Listener</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span> <span class="o">=</span> <span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">c2b</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">C2B</span><span class="p">()</span><span class="o">.</span><span class="n">c2b_transact</span><span class="p">(</span><span class="n">ShortCode</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">CommandID</span><span class="o">=</span><span class="s2">&quot;CustomerPayBillOnline&quot;</span><span class="p">,</span><span class="n">Amount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">Msisdn</span><span class="o">=</span><span class="mi">254708374149</span><span class="p">,</span><span class="n">BillRefNumber</span><span class="o">=</span><span class="s2">&quot;019903023&quot;</span><span class="p">,</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>CommandID - Unique command for each transaction type. For C2B default String</li>
+</ol>
+<ul class="simple">
+<li>CustomerPayBillOnline</li>
+<li>CustomerBuyGoodsOnline</li>
+</ul>
+<ol class="last arabic simple" start="2">
+<li>Amount The amount being transacted  Numeric   100</li>
+<li>Msisdn Phone number (msisdn) initiating the transaction     Numeric  MSISDN(12 digits) - 254XXXXXXXXX</li>
+<li>BillRefNumber Bill Reference Number (Optional)      Alpha-Numeric    Alpha-Numeric less then 20 digits</li>
+<li>ShortCode Short Code receiving the amount being transacted  Numeric  Shortcode (6 digits) - XXXXXX</li>
+</ol>
+</div>
+</div>
+<div class="section" id="lipa-na-m-pesa-online-payment-api">
+<h2><strong>Lipa Na M-Pesa Online Payment API</strong><a class="headerlink" href="#lipa-na-m-pesa-online-payment-api" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>BusinessShortCode The organization shortcode used to receive the transaction Numeric        Shortcode (6 digits)</li>
+<li>Password The password for encrypting the request    String  base64.encode(ShortcodePasskeyTimestamp)</li>
+<li>Timestamp The timestamp of the transaction  Timestamp       yyyymmddhhiiss</li>
+<li>TransactionType The transaction type to be used for the request ‘CustomerPayBillOnline’     String  CustomerPayBillOnline</li>
+<li>Amount  The amount to be transacted Numeric 1</li>
+<li>PartyA The entity sending the funds Numeric MSISDN (12 digits)</li>
+<li>PartyB The organization receiving the funds Numeric Shortcode (6 digits)</li>
+<li>PhoneNumber The MSISDN sending the funds    Numeric MSISDN (12 digits)</li>
+<li>CallBackURL Call Back URL   URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>AccountReference Account Reference Alpha-Numeric   Any combinations of letters and numbers</li>
+<li>TransactionDesc Description of the transaction     String  any string of less then 20 characters</li>
+</ol>
+</div>
+<ul>
+<li><p class="first">Prompt ussd on customer device:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span> <span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">push</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">Stkpush</span><span class="p">()</span><span class="o">.</span><span class="n">invokemenu</span><span class="p">(</span>
+                         <span class="n">BusinessShortCode</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">Password</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">Timestamp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">TransactionType</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">Amount</span><span class="o">=</span><span class="p">,</span>
+                                 <span class="n">PartyA</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">PartyB</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">PhoneNumber</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">CallBackURL</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">AccountReference</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">TransactionDesc</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">check lipa na mpesa status:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span> <span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">q</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">Stkpush</span><span class="p">()</span><span class="o">.</span><span class="n">query_request</span><span class="p">(</span><span class="n">BusinessShortCode</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">Password</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">Timestamp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">CheckoutRequestID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="b2b">
+<h2><strong>B2B</strong><a class="headerlink" href="#b2b" title="Permalink to this headline">¶</a></h2>
+<p>This api is used to transfer money from one business to another:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span><span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">b2b</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">B2B</span><span class="p">()</span><span class="o">.</span><span class="n">_b2b_request</span><span class="p">(</span>
+                    <span class="n">Initiator</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">SecurityCredential</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">CommandID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">SenderIdentifierType</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">RecieverIdentifierType</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">Amount</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">PartyA</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">PartyB</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">AccountReference</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">Remarks</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">QueueTimeOutURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">ResultURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">token</span><span class="o">=</span><span class="n">token</span>
+                    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>CommandID The command id used to carry out a B2B payment String</li>
+</ol>
+<ul class="simple">
+<li>BusinessPayBill</li>
+<li>BusinessBuyGoods</li>
+<li>DisburseFundsToBusiness</li>
+<li>BusinessToBusinessTransfer</li>
+<li>MerchantToMerchantTransfer</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li>Amount The amount been transacted   Numeric  1</li>
+<li>PartyA Organization Sending the transaction Numeric  Shortcode (6 digits)</li>
+<li>SenderIdentifier Type of organization sending the transaction       Numeric 1</li>
+</ol>
+<ul class="simple">
+<li>MSISDN</li>
+<li>Till Number</li>
+<li>Organization short code</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li>PartyB Organization Receiving the funds     Numeric  Shortcode (6 digits)</li>
+<li>RecieverIdentifierType Type of organization receiving the transaction       Numeric</li>
+</ol>
+<ul class="simple">
+<li>MSISDN</li>
+<li>Till Number</li>
+<li>Organization short code</li>
+</ul>
+<ol class="arabic simple" start="7">
+<li>Remarks Comments that are sent along with the transaction.  String   String of less then 100 characters</li>
+<li>Initiator This is the credential/username used to authenticate the transaction request.String       This is the credential/username used to authenticate the transaction request</li>
+</ol>
+<p>9. SecurityCredential This is the encrypted password to autheticate the transaction request    String  Encrypted password for
+the initiator to authenticate using the request</p>
+<ol class="last arabic simple" start="10">
+<li>QueueTimeOutURL The path that stores information of time out transactions.i        URL      <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ResultURL The path that receives results from M-Pesa.      URL      <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>AccountReference Account Reference mandatory for “BussinessPaybill” CommandID      Alpha-Numeric    string of less then 20 characters</li>
+</ol>
+</div>
+</div>
+<div class="section" id="transaction-status-request">
+<h2><strong>Transaction Status Request</strong><a class="headerlink" href="#transaction-status-request" title="Permalink to this headline">¶</a></h2>
+<p>Check MPESA transaction status:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span><span class="n">token</span>  <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">a</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">TransactionStatus</span><span class="p">()</span><span class="o">.</span><span class="n">get_transaction_status</span><span class="p">(</span>
+                      <span class="n">Initiator</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">SecurityCredential</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">CommandID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">TransactionID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">PartyA</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">IdentifierType</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">ResultURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">QueueTimeOutURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">Remarks</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">Occasion</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">OriginalConversationID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                              <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>CommandID Takes only ‘TransactionStatusQuery’ command id String</li>
+</ol>
+<ul class="simple">
+<li>TransactionStatusQuery</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li>PartyA Organization/MSISDN sending the transaction  Numeric</li>
+</ol>
+<ul class="simple">
+<li>Shortcode (6 digits)</li>
+<li>MSISDN (12 Digits)</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>IdentifierType Type of organization receiving the transactionNumeric        1</li>
+</ol>
+<ul class="simple">
+<li>MSISDN</li>
+<li>Till Number</li>
+<li>Organization short code</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li>Remarks Comments that are sent along with the transaction   String  sequence of characters up to 100</li>
+</ol>
+<p>5. Initiator The name of Initiator to initiating  the request  Alpha-Numeric   This is the credential/username used to
+authenticate the transaction request</p>
+<p>6. SecurityCredential Encrypted Credential of user getting transaction amount  String  Encrypted password for the initiator to
+authenticate the transaction request</p>
+<ol class="arabic simple" start="7">
+<li>QueueTimeOutURL The path that stores information of time out transaction    URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ResultURL The path that stores information of transaction   URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+</ol>
+<p>9. TransactionID Unique identifier to identify a transaction on M-Pesa (Use either Transaction ID or Original Conversation ID
+in the request)        Alpha-Numeric   LKXXXX1234</p>
+<p>10. OriginalConversationID Unique identifier to identify a request on M-Pesa that has already occurerd (Use either Transaction
+ID or Original Conversation ID in the request) String  sXXXX-XXXX-XX</p>
+<ol class="last arabic simple" start="11">
+<li>Occasion Optional Parameter String Sequence of characters up to 100</li>
+</ol>
+</div>
+</div>
+<div class="section" id="account-balance">
+<h2><strong>Account Balance</strong><a class="headerlink" href="#account-balance" title="Permalink to this headline">¶</a></h2>
+<p>Account balance enquiry:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span><span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">q</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">Balance</span><span class="p">()</span><span class="o">.</span><span class="n">get_balance</span><span class="p">(</span>
+                     <span class="n">Initiator</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">SecurityCredential</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">CommandID</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">PartyA</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">IdentifierType</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">Remarks</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">QueueTimeOutURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">ResultURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">token</span><span class="o">=</span><span class="n">token</span>
+                     <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>CommandID  Takes only ‘AccountBalance’ CommandID String AccountBalance</li>
+</ol>
+<p>2.PartyA Type of organization receiving the transaction        Numeric  XXXXXX</p>
+<p>3.IdentifierType Type of organization receiving the transaction Numeric</p>
+<ul class="simple">
+<li>MSISDN</li>
+<li>Till Number</li>
+<li>Organization short code</li>
+</ul>
+<p>4.Remarks Comments that are sent along with the transaction.   String  sequence of characters up to 100</p>
+<p>5. Initiator The name of Initiator to initiating  the request  Alpha-Numeric   This is the credential/username used to
+authenticate the transaction request</p>
+<p>6. SecurityCredential Encrypted Credential of user getting transaction amount  String  Encrypted password for the initiator to
+authenticate the transaction request</p>
+<p>7.QueueTimeOutURL The path that stores information of time out transaction     URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</p>
+<p class="last">8.ResultURL The path that stores information of transaction    URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</p>
+</div>
+</div>
+<div class="section" id="b2c">
+<h2><strong>B2C</strong><a class="headerlink" href="#b2c" title="Permalink to this headline">¶</a></h2>
+<p>Business to customer MPESA transaction:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span><span class="n">generate</span> <span class="n">token</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">b2c</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">B2C</span><span class="p">()</span><span class="o">.</span><span class="n">b2c_request</span><span class="p">(</span>
+                    <span class="n">InitiatorName</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">SecurityCredential</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">CommandID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">Amount</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">PartyA</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">PartyB</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">Remarks</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">QueueTimeOutURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">ResultURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">Occassion</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">token</span><span class="o">=</span><span class="n">token</span>
+                    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>InitiatorName The name of the initiator initiating the request      Alpha-numeric   This is the credential/username used to authenticate the transaction request</li>
+<li>SecurityCredential Encrypted Credential of user getting transaction amount  Alpha-numeric   Encrypted password for the initiator to authenticate the transaction request</li>
+<li>CommandID Unique command for each transaction type</li>
+</ol>
+<ul class="simple">
+<li>SalaryPayment</li>
+<li>BusinessPayment</li>
+<li>PromotionPayment</li>
+<li>Alphanumeric</li>
+<li>SalaryPayment</li>
+<li>BusinessPayment</li>
+<li>PromotionPayment</li>
+</ul>
+<ol class="last arabic simple" start="4">
+<li>Amount The amount been transacted   Numbers 00</li>
+<li>PartyA Organization /MSISDN sending the transaction Numbers  -Shortcode (6 digits) MSISDN (12 digits)</li>
+<li>PartyB MSISDN sending the transaction       Phone number - Country code (254) without the plus sign -MSISDN (12 digits)</li>
+<li>Remarks Comments that are sent along with the transaction.  Alpha-numeric   sequence of characters upto 100</li>
+<li>QueueTimeOutURL The path that stores information of time out transaction    URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ResultURL The path that stores information of transactions  URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>Occassion Optional Parameter       Alpha-numeric   sequence of characters up to 100</li>
+</ol>
+</div>
+</div>
+<div class="section" id="reversal">
+<h2><strong>Reversal</strong><a class="headerlink" href="#reversal" title="Permalink to this headline">¶</a></h2>
+<p>API to reverse transactions:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">token</span><span class="o">=</span><span class="n">token</span> <span class="n">generated</span> <span class="kn">from</span> <span class="o">**</span><span class="n">OAUTH</span><span class="o">**</span>
+<span class="n">reversal</span><span class="o">=</span><span class="n">mpesawrapper</span><span class="o">.</span><span class="n">Reversal</span><span class="p">()</span><span class="o">.</span><span class="n">reversal_request</span><span class="p">(</span>
+                     <span class="n">Initiator</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">SecurityCredential</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">CommandID</span><span class="o">=</span><span class="s2">&quot;TransactionReversal&quot;</span><span class="p">,</span>
+                             <span class="n">TransactionID</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">Amount</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">ReceiverParty</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">RecieverIdentifierType</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">ResultURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">QueueTimeOutURL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">Remarks</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">Occasion</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">token</span><span class="o">=</span><span class="n">token</span>
+                     <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="arabic simple">
+<li>CommandID Takes only ‘TransactionReversal’ Command id String        TransactionReversal</li>
+<li>ReceiverParty Organization /MSISDN sending the transaction  Numeric</li>
+</ol>
+<ul class="simple">
+<li>Shortcode (6 digits)</li>
+<li>MSISDN (12 Digits)</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>ReceiverIdentifierType Type of organization receiving the transaction Numeric       1</li>
+</ol>
+<ul class="simple">
+<li>MSISDN</li>
+<li>Till Number</li>
+<li>Organization short code</li>
+</ul>
+<ol class="last arabic simple" start="4">
+<li>Remarks Comments that are sent along with the transaction.  String  sequence of characters up to 100</li>
+<li>Initiator The name of Initiator to initiating  the request  Alpha-Numeric   This is the credential/username used to authenticate the transaction request</li>
+<li>SecurityCredential Encrypted Credential of user getting transaction amount  String  Encrypted password for the initiator to authenticate the transaction request</li>
+<li>QueueTimeOutURL The path that stores information of time out transaction    URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>ResultURL The path that stores information of transaction   URL     <a class="reference external" href="https://ip">https://ip</a> or domain:port/path</li>
+<li>TransactionID Organization Receiving the funds      Alpha-Numeric   LKXXXX1234</li>
+<li>Occasion Optional Parameter        String  sequence of characters up to 100</li>
+</ol>
+</div>
+</div>
+<div class="section" id="test-credentials">
+<h2><strong>Test Credentials</strong><a class="headerlink" href="#test-credentials" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Shortcode 1:   600147
+Initiator Name:   (Shortcode 1)        testapi
+Security Credential:   (Shortcode 1)   Safaricom147!
+Shortcode 2:   600000
+Test MSISDN:   254708374149
+ExpiryDate:   2017-11-13T18:59:13+03:00
+Lipa Na Mpesa Online Shortcode:   174379
+Lipa Na Mpesa Online PassKey:    bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Benson Nguru Mburu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
