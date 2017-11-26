@@ -58,9 +58,10 @@ Getting Started
 
 ``import mpesawrapper``
 
-* **OAUTH** ::
+**OAUTH**
+----------------
+This API  should ideally be called before every transaction to obtain an access token for other transactions::
 
-    This API  should ideally be called before every transaction to obtain an access token for other transactions
        consumer_key=consumer key from mpesa
        consumer_secret=consumer secret from mpesa
        token=mpesawrapper.Generatetoken().generate_token(key=consumer_key,secret=consumer_secret)
