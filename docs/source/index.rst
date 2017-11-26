@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to unofficial new daraja MPESA documentation!
-======================================================
+Welcome to the new unofficial  daraja MPESA API documentation!
+========================================================================
 
 
-Here is a simple guide to help you get started with the new MPESA daraja API.
+Here is a simple guide to help you get started with the   daraja API.
 
 
 .. note::
@@ -20,9 +20,6 @@ Here is a simple guide to help you get started with the new MPESA daraja API.
 
  - source /path/to/envname/bin/activate
 
-**installation**::
-
-    $ pip install mpesawrapper
 
 
 **NOTE**
@@ -49,15 +46,22 @@ The following MPESA features are covered in this package
 Getting Started
 ----------------
 
-Making transactions is simple from your command line try the following
 
-* Import library
+**Installation**
+----------------
+::
+
+    $ pip install mpesawrapper
+
+
+**Import library**
 
 ``import mpesawrapper``
 
-* **OAUTH** ::
+**OAUTH**
+----------------
+This API  should ideally be called before every transaction to obtain an access token for other transactions::
 
-    This API  should ideally be called before every transaction to obtain an access token for other transactions
        consumer_key=consumer key from mpesa
        consumer_secret=consumer secret from mpesa
        token=mpesawrapper.Generatetoken().generate_token(key=consumer_key,secret=consumer_secret)
@@ -457,5 +461,4 @@ API to reverse transactions::
  ExpiryDate:   2017-11-13T18:59:13+03:00
  Lipa Na Mpesa Online Shortcode:   174379
  Lipa Na Mpesa Online PassKey:    bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
-
 
