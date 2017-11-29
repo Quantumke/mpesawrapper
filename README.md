@@ -158,8 +158,8 @@ This Library covers:
 				Amount="10",
 				ReceiverParty="600147",
 				RecieverIdentifierType= "4",
-				ResultURL="https://a7c7fa84.ngrok.io/confirm",
-				QueueTimeOutURL="https://a7c7fa84.ngrok.io/validate",
+				ResultURL="",
+				QueueTimeOutURL="",
 				Remarks="trytest",
 				Occasion="100",
 				token=token
